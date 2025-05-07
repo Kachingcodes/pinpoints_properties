@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@theme{
+  --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+
+  --font-cinzel:"Cinzel", "serif";
+  --font-libre:"Libre Baskerville", "serif";
+  --font-open:"Open Sans", "sans-serif";
+  --font-rob: "Roboto Flex", "sans-serif";
+  
+  --shadow-3xl: 0px 5px 40px 5px rgba(251, 253, 234, 0.22);
+
+  --animate-rotate-border: border-rotate 6s linear infinite;
+
+  @keyframes border-rotate {
+    to{
+      --border-angle: 360deg;
+    }
+    
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: rgb(194, 161, 111); 
+}
+
+.swiper-pagination {
+  display: none !important;
+}
+
+@media (max-width:480px) {
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+  color: transparent; 
+  }
+  
+}
