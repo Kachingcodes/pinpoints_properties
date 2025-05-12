@@ -11,7 +11,7 @@ import Slider3 from './Slider3';
 
 const TestSlider = () => {
   return (
-    <div className="w-full h-auto">
+    <div className="w-full md:h-[100vh] h-auto">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

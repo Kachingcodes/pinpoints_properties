@@ -31,7 +31,7 @@ const Testimonials = () => {
 
                 </motion.div>
 
-                <div className="w-full md:p-4 items-center overflow-hidden h-[960px] md:h-[440px]">
+                <div className="w-full md:p-4 items-center overflow-hidden h-[960px] md:h-[480px]">
                     <TestSlider/>
                 </div>               
             </div>

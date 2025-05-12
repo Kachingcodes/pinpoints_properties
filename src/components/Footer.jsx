@@ -8,27 +8,42 @@ import { MdOutlineMessage } from "react-icons/md";
 const Footer = () => {
     const footerRef = useRef(null);
 
-    useEffect(() => {
-        const fullHeight = footerRef.current.offsetHeight;
-        gsap.set(footerRef.current, { y: fullHeight - 50 });
-    }, []);
-
     const expandFooter = () => {
-        gsap.to(footerRef.current, { y: 0, duration: 0.5, ease: "power2.out" });
+        if (window.innerWidth >= 768 && footerRef.current) {
+            gsap.to(footerRef.current, { y: 0, duration: 0.5, ease: "power2.out" });
+        }
     };
 
     const collapseFooter = () => {
-        const fullHeight = footerRef.current.offsetHeight;
-        gsap.to(footerRef.current, { y: fullHeight - 50, duration: 0.5, ease: "power2.in" });
+        if (window.innerWidth >= 768 && footerRef.current) {
+            const fullHeight = footerRef.current.offsetHeight;
+            gsap.to(footerRef.current, { y: fullHeight - 50, duration: 0.5, ease: "power2.in" });
+        }
     };
+
+    useEffect(() => {
+        const isDesktop = window.innerWidth >= 768;
+
+        if (isDesktop && footerRef.current) {
+            const fullHeight = footerRef.current.offsetHeight;
+            gsap.set(footerRef.current, { y: fullHeight - 50 });
+
+            const footerEl = footerRef.current;
+            footerEl.addEventListener("mouseenter", expandFooter);
+            footerEl.addEventListener("mouseleave", collapseFooter);
+
+            return () => {
+                footerEl.removeEventListener("mouseenter", expandFooter);
+                footerEl.removeEventListener("mouseleave", collapseFooter);
+            };
+        }
+    }, []);
 
     return (
         <section
             id="contact"
             ref={footerRef}
             className="w-full bg-[#110701] text-white overflow-hidden transition-all"
-            onMouseEnter={expandFooter}
-            onMouseLeave={collapseFooter}
         >
             <div className="w-full flex flex-col gap-10 md:gap-8 mx-auto relative px-4 py-6 sm:px-6 lg:px-8">
                 
