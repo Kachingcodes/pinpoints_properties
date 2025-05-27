@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import SkeletonImage from './SkeletonImage';
 import exploreData from "../data/exploreData";
 import { ImOffice } from "react-icons/im";
 import { GiFamilyHouse } from "react-icons/gi";
@@ -66,7 +67,7 @@ export default function Explore() {
                         whileInView="visible"
                         transition={{ delay: idx * 0.1, duration: 0.9, ease: 'easeOut' }}
                     >
-                    <img
+                    <SkeletonImage
                         src={src}
                         alt={`img-${idx+1}`} 
                         className="rounded-lg shadow transition duration-300 transform hover:scale-106"
@@ -78,8 +79,6 @@ export default function Explore() {
 
                 </AnimatePresence>
 
-
-        {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 pt-4 px-2">
           {exploreData.map(exp => {
             const Icon = iconMap[exp.key];
@@ -99,7 +98,6 @@ export default function Explore() {
               );
           })}
         </div>
-
 
       </div>
     </section>

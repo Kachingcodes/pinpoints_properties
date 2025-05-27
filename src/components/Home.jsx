@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from 'framer-motion';
+import SkeletonImage from './SkeletonImage';
 import Marquee from "react-fast-marquee";
 import Navbar from './Navbar';
 import house_background2 from '../albom/house_background2.jpg';
@@ -41,7 +42,7 @@ const Home = () => {
                     {/* Image Section */}
                     <div className="flex flex-wrap gap-4 justify-center sm:justify-end mt-6">
                         {[sitting_room2, bedroom, kitchen].map((src, idx) => (
-                            <img
+                            <SkeletonImage
                                 key={idx}
                                 src={src}
                                 alt={`room-${idx}`}
