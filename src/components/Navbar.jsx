@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-scroll';
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import pin from "../albom/pin_logo.png"
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,9 @@ function Navbar() {
     <header className="w-full p-2">
       <nav className="flex justify-between items-center max-w-6xl mx-auto relative z-50">
         {/* LOGO */}
-        <div className="text-white text-xl font-bold">Pinpoints Properties</div>
+        <div className="text-white text-xl font-bold">
+          <img src={pin} alt="pin" className="w-30 h-full"/>
+          </div>
 
         {/* DESKTOP NAV */}
         <ul className="hidden md:flex gap-6 text-white bg-black/20 p-3 rounded-full cursor-pointer">

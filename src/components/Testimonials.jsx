@@ -23,7 +23,7 @@ const Testimonials = () => {
                         initial="hiddenLeft"
                         whileInView="visible"
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="w-41.5 md:w-48 p-1 relative flex items-center rounded-full animate-rotate-border 
+                        className="w-41 md:w-48 p-1 relative flex items-center rounded-full animate-rotate-border 
                         bg-conic/[from_var(--border-angle)] from-[#0C0C0C] via-[#481E14] to bg-[#B19470]">
                         
                     <h1 className="rounded-full bg-amber-50 px-6 py-3 text-center md:text-left 
