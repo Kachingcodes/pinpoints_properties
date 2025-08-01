@@ -40,7 +40,7 @@ const Home = () => {
                     </div>
 
                     {/* Image Section */}
-                   <div className="grid grid-cols-2 md:flex w-full md:w-[60%] justify-end gap-2 mt-6 ml-0 md:ml-10">
+                   <div className="grid grid-cols-2 md:flex w-full md:w-[60%] justify-end gap-2 mt-6 ml-0 md:ml-60">
   {[sitting_room2, bedroom, kitchen].map((src, idx) => (
     <SkeletonImage
       key={idx}
