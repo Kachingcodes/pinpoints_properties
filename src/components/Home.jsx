@@ -40,16 +40,17 @@ const Home = () => {
                     </div>
 
                     {/* Image Section */}
-                    <div className="flex flex-wrap gap-4 justify-center sm:justify-end mt-6">
+                    <div className="flex w-full md:w-[76%] justify-end gap-4 mt-6 md:ml-10 ml-60">
                         {[sitting_room2, bedroom, kitchen].map((src, idx) => (
                             <SkeletonImage
-                                key={idx}
-                                src={src}
-                                alt={`room-${idx}`}
-                                className="w-28 sm:w-36 md:w-40 rounded-xl transition duration-500 transform hover:scale-110"
+                            key={idx}
+                            src={src}
+                            alt={`room-${idx}`}
+                            className="w-26 h-20 object-cover rounded-xl transition duration-400 transform hover:scale-105"
                             />
                         ))}
                     </div>
+
 
                     <Marquee speed={50} gradient={false} className="py-4 text-white font-open text-sm sm:text-base">
                         Locations — Ikeja, Ogba, Lekki, Ogun State, Rivers State

@@ -6,7 +6,7 @@ function SkeletonImage({ src, alt = '', height = 200, width = '100%', style = {}
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <>
+    <div style={{ position: 'relative', width, height }}>
       {!loaded && (
         <Skeleton
           height={height}
@@ -19,12 +19,13 @@ function SkeletonImage({ src, alt = '', height = 200, width = '100%', style = {}
         src={src}
         alt={alt}
         onLoad={() => setLoaded(true)}
-        className={`rounded-lg shadow transition duration-300 transform hover:scale-105 ${
-          loaded ? className : 'hidden'
-        }`}
         loading="lazy"
+        className={`absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow transition duration-300 transform hover:scale-105 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        } ${className}`}
+        style={{ transition: 'opacity 0.3s ease-in-out' }}
       />
-    </>
+    </div>
   );
 }
 
