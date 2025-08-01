@@ -40,16 +40,18 @@ const Home = () => {
                     </div>
 
                     {/* Image Section */}
-                    <div className="flex w-full md:w-[76%] justify-end gap-4 mt-6 md:ml-10 ml-60">
-                        {[sitting_room2, bedroom, kitchen].map((src, idx) => (
-                            <SkeletonImage
-                            key={idx}
-                            src={src}
-                            alt={`room-${idx}`}
-                            className="w-26 h-20 object-cover rounded-xl transition duration-400 transform hover:scale-105"
-                            />
-                        ))}
-                    </div>
+                   <div className="grid grid-cols-2 md:flex w-full md:w-[60%] justify-end gap-2 mt-6 ml-0 md:ml-10">
+  {[sitting_room2, bedroom, kitchen].map((src, idx) => (
+    <SkeletonImage
+      key={idx}
+      src={src}
+      alt={`room-${idx}`}
+      className="w-24 h-20 md:w-46 md:h-40 object-cover rounded-xl transition duration-400 transform hover:scale-105"
+    />
+  ))}
+</div>
+
+
 
 
                     <Marquee speed={50} gradient={false} className="py-4 text-white font-open text-sm sm:text-base">
